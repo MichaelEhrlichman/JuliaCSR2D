@@ -19,8 +19,9 @@ function Es_case_B(z::Float64, x::Float64, gamma::Float64)
     beta = sqrt(beta2)
 
     alp = alpha_exact_case_B_brentq(z, x, beta)
-    sin2a = sin(2*alp)
-    cos2a = cos(2*alp)
+    #sin2a = sin(2*alp)
+    #cos2a = cos(2*alp)
+    sin2a, cos2a = sincos(2*alp)
     
     kap = 2*(alp - z)/beta # kappa for case B
     
@@ -186,8 +187,9 @@ function Es_case_A(z::Float64, x::Float64, gamma::Float64, alp::Float64)
     beta2 = 1-1/gamma^2
     beta = sqrt(beta2)
     
-    sin2a = sin(2*alp)
-    cos2a = cos(2*alp) 
+    #sin2a = sin(2*alp)
+    #cos2a = cos(2*alp)
+    sin2a, cos2a = sincos(2*alp)
     
     eta = eta_case_A(z, x, beta2, alp)
     kap = (2*(alp - z) + eta)/beta   # kappa for case A
